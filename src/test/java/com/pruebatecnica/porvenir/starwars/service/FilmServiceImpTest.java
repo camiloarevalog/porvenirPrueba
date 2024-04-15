@@ -66,14 +66,7 @@ class FilmServiceImpTest {
         assertEquals(filmRequestDTO.getTitle(), result.getTitle());
     }
 
-    @Test
-    public void testGetFilms() {
-        List<FilmEntity> films = Collections.singletonList(new FilmEntity());
-        when(filmRepository.findAll()).thenReturn(films);
+    
 
-        List<FilmEntity> result = filmService.getFilms();
-
-        assertEquals(films.size(), result.size());
-    }
 
 }

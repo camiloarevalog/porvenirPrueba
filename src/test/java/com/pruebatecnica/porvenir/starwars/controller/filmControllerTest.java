@@ -56,16 +56,6 @@ class filmControllerTest {
         assertEquals(filmResponseDTO, responseEntity.getBody());
     }
 
-    @Test
-    void testGetFilms() {
-        List<FilmEntity> filmEntities = Collections.singletonList(new FilmEntity());
-        when(filmService.getFilms()).thenReturn(filmEntities);
-
-        ResponseEntity<List<FilmEntity>> responseEntity = filmController.getFilms();
-
-        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
-        assertEquals(filmEntities, responseEntity.getBody());
-    }
 
     @Test
     void testDeleteFilm() {

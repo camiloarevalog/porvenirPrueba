@@ -46,7 +46,7 @@ public class filmController {
 
 
     @GetMapping
-    public ResponseEntity<List<FilmEntity>> getFilms() {
+    public ResponseEntity<List<FilmResponseDTO>> getFilms() {
         return new ResponseEntity<>(filmService.getFilms(), HttpStatus.OK);
 
     }

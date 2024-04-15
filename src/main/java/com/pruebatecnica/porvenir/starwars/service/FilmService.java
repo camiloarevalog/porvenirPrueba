@@ -14,7 +14,7 @@ public interface FilmService {
 
     public FilmResponseDTO updateFilm(String id, FilmRequestDTO filmRequestDTO);
 
-    public List<FilmEntity> getFilms();
+    public List<FilmResponseDTO> getFilms();
 
     public boolean deleteFilmById(String id);
 

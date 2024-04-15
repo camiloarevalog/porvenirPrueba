@@ -15,6 +15,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class FilmServiceImp implements FilmService {
@@ -74,10 +75,12 @@ public class FilmServiceImp implements FilmService {
     }
 
     @Override
-    public List<FilmEntity> getFilms() {
+    public List<FilmResponseDTO> getFilms() {
         List<FilmEntity> filmsEntityList = filmRepository.findAll();
 
-        return filmsEntityList;
+        return filmsEntityList.stream()
+                .map(FilmMapper::toFilmResponseDtoOfFilmEntity)
+                .collect(Collectors.toList());
 
     }
 

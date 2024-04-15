@@ -36,4 +36,13 @@ public class FilmMapper {
 
     }
 
+    public static FilmResponseDTO toFilmResponseDtoOfFilmEntity(FilmEntity film) {
+        FilmResponseDTO filmResponseDTO = new FilmResponseDTO();
+        filmResponseDTO.setEpisodeId(film.getEpisodeId());
+        filmResponseDTO.setTitle(film.getTitle());
+        filmResponseDTO.setReleaseDate(film.getReleaseDate());
+        return filmResponseDTO;
+
+    }
+
 }
